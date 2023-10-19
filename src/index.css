@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        /*Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)*/
+        --background: 0 0% 98%;
+        /*Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)*/
+        --foreground: 200 15% 8%;
+        /*Dark Gray (Light Mode Input): hsl(0, 0%, 52%)*/
+        --input: 0 0% 52%;
+        /*White (Light Mode Elements): hsl(0, 0%, 100%)*!*/
+        --element: 0 0% 100%;
+
+        --header-height: 100px;
+
+        --card: 0 0% 100%;
+        --card-foreground: 0 0% 3.9%;
+
+        --popover: 0 0% 100%;
+        --popover-foreground: 0 0% 3.9%;
+
+        --primary: 0 0% 9%;
+        --primary-foreground: 0 0% 98%;
+
+        --secondary: 0 0% 96.1%;
+        --secondary-foreground: 0 0% 9%;
+
+        --muted: 0 0% 96.1%;
+        --muted-foreground: 0 0% 45.1%;
+
+        --accent: 0 0% 96.1%;
+        --accent-foreground: 0 0% 9%;
+
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+
+        --border: 0 0% 89.8%;
+        --ring: 0 0% 3.9%;
+
+        --radius: 0.5rem;
+    }
+
+    .dark {
+        /*Very Dark Blue (Dark Mode Background): hsl(207, 26%, 17%)*/
+        --background: 207 26% 17%;
+        /*White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%)*/
+        --foreground: 0 0% 100%;
+        /*Dark Blue (Dark Mode Elements): hsl(209, 23%, 22%)*/
+        --element: 209 23% 22%;
+
+        --card: 0 0% 3.9%;
+        --card-foreground: 0 0% 98%;
+
+        --popover: 0 0% 3.9%;
+        --popover-foreground: 0 0% 98%;
+
+        --primary: 0 0% 98%;
+        --primary-foreground: 0 0% 9%;
+
+        --secondary: 0 0% 14.9%;
+        --secondary-foreground: 0 0% 98%;
+
+        --muted: 0 0% 14.9%;
+        --muted-foreground: 0 0% 63.9%;
+
+        --accent: 0 0% 14.9%;
+        --accent-foreground: 0 0% 98%;
+
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 98%;
+
+        --border: 0 0% 14.9%;
+        --input: 0 0% 14.9%;
+        --ring: 0 0% 83.1%;
+    }
+}
+
+@font-face {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+@layer base {
+    * {
+        @apply border-border font-nunito font-light;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+
+    .flex-center {
+        @apply flex items-center justify-center
+    }
+}
+
+::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: hsl(207 26% 17%);
+}
+
