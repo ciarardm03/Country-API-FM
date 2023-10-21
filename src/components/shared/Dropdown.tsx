@@ -2,6 +2,7 @@ import {Popover, PopoverContent, PopoverTrigger} from '@/components/ui/popover'
 import {Button} from '@/components/ui/button'
 import {dropdownMenus} from '@/constants'
 import React, {SetStateAction} from 'react'
+import { cn } from '@/lib/utils.ts'
 
 type DropdownProps = {
     region?: string,
@@ -16,15 +17,15 @@ export default function Dropdown({region, setRegion}: DropdownProps) {
     };
 
     return (
-        <Popover open={isPopoverOpen} onOpenChange={() => setIsPopoverOpen(true)}>
+        <Popover open={isPopoverOpen} onOpenChange={() => setIsPopoverOpen(true)} >
             <PopoverTrigger asChild onClick={() => setIsPopoverOpen(true)}>
-                <Button>
+                <Button className={cn(['h-10 md:h-[56px]'])}>
                     {region ? region : 'Filter by Region'}
                     <span></span>
                 </Button>
             </PopoverTrigger>
 
-            <PopoverContent>
+            <PopoverContent onMouseLeave={() => setIsPopoverOpen(false)}>
                 {
                     dropdownMenus.map((menu, index) => {
                         return (
